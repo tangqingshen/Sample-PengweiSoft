@@ -23,36 +23,34 @@ export class ScanCardPage {
 
   constructor(public navCtrl: NavController, private ocrService: OcrService) { }
 
-  ionViewDidLoad() {
-
-  }
+  ionViewDidLoad() {}
 
   getPicture() {
     var options = {
             destinationType: Camera.DestinationType.FILE_URI
         };
-
+    var that = this;
     Camera.getPicture(options).then((imageData) => {
       if (imageData.startsWith('file:///')) {
         //image url
-        this.filepath = imageData;
+        that.filepath = imageData;
         File.resolveLocalFilesystemUrl(imageData).then((entry) => {
-          this.entry = JSON.stringify(entry);
+          that.entry = JSON.stringify(entry);
           entry.getMetadata((metaData) => {
-            this.ocrService.getInfo({ filepath: imageData, filesize: metaData.size }).then((cardinfo) => {
-              this.cardinfo = JSON.stringify(cardinfo);
+            that.ocrService.getInfo({ filepath: imageData, filesize: metaData.size }).then((cardinfo) => {
+              that.cardinfo = JSON.stringify(cardinfo);
             }, (err)=>{
-              this.error = JSON.stringify(err);
+              that.error = JSON.stringify(err);
             });
           })
         })
       } else {
         // err 
-        this.error = "文件路径格式不正确";
+        that.error = "文件路径格式不正确";
       }
     }, (err) => {
       // Handle error
-      this.error = JSON.stringify(err);
+      that.error = JSON.stringify(err);
     });
   }
 }
