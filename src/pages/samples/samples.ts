@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {ScanCardPage} from '../sample-scancard/sample-scancard'
+import { ScanCardPage } from '../sample-scancard/sample-scancard';
+import { OfflineStoragePage } from '../sample-offlinestorage/sample-offlinestorage';
 
 /*
   Generated class for the Samples page.
@@ -14,15 +15,17 @@ import {ScanCardPage} from '../sample-scancard/sample-scancard'
 })
 export class SamplesPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) { }
 
   ionViewDidLoad() {
-    
+
   }
 
-  itemSelected(item){
-    if (item == "scanCard"){
-       this.navCtrl.push(ScanCardPage);
+  itemSelected(item) {
+    if (item == "scanCard") {
+      this.navCtrl.push(ScanCardPage);
+    } else if (item == "offlineStorage") {
+      this.navCtrl.push(OfflineStoragePage);
     }
   }
 

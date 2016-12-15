@@ -7,6 +7,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { SamplesPage } from '../pages/samples/samples';
 import { HomePage } from '../pages/home/home';
 import { ScanCardPage } from '../pages/sample-scancard/sample-scancard';
+import { OfflineStoragePage, ModalCreateTodoPage, ModalEditTodoPage } from '../pages/sample-offlinestorage/sample-offlinestorage';
 import { TabsPage } from '../pages/tabs/tabs';
 import { OcrService } from './ocr.service';
 
@@ -17,6 +18,9 @@ import { OcrService } from './ocr.service';
     ContactPage,
     SamplesPage,
     ScanCardPage,
+    OfflineStoragePage,
+    ModalCreateTodoPage,
+    ModalEditTodoPage,
     HomePage,
     TabsPage
   ],
@@ -31,6 +35,9 @@ import { OcrService } from './ocr.service';
     ContactPage,
     SamplesPage,
     ScanCardPage,
+    OfflineStoragePage,
+    ModalCreateTodoPage,
+    ModalEditTodoPage,
     HomePage,
     TabsPage
   ],
