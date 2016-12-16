@@ -30,7 +30,6 @@ export class OfflineStoragePage {
   public todos = [];
   private db;
   private sync;
-  private toast;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public modalCtrl: ModalController, public zone: NgZone) { }
 
@@ -43,12 +42,6 @@ export class OfflineStoragePage {
 
   ionViewDidLoad() {
     var that = this;
-
-    that.toast = this.toastCtrl.create({
-      message: '网络连接已断开',
-      duration: 2000,
-      position: 'top'
-    });
 
     that.db = new PouchDB('pengwei_todo');
 
@@ -120,7 +113,12 @@ export class OfflineStoragePage {
   toggleNetwork() {
     if (this.isOnline) {
       this.isOnline = false;
-      this.toast.present();
+      let toast = this.toastCtrl.create({
+        message: '网络连接已断开',
+        duration: 2000,
+        position: 'top'
+      });
+      toast.present();
 
       if (this.sync) {
         this.sync.cancel();
