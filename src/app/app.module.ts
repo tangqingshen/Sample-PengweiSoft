@@ -9,6 +9,10 @@ import { HomePage } from '../pages/home/home';
 import { ScanCardPage } from '../pages/sample-scancard/sample-scancard';
 import { OfflineStoragePage, ModalCreateTodoPage, ModalEditTodoPage } from '../pages/sample-offlinestorage/sample-offlinestorage';
 import { TabsPage } from '../pages/tabs/tabs';
+import {ActionSheetPage} from '../pages/sample-action-sheet/sample-action-sheet';
+import {AppAvailabilityPage} from '../pages/sample-app-availability/sample-app-availability';
+
+
 import { OcrService } from './ocr.service';
 
 @NgModule({
@@ -17,12 +21,14 @@ import { OcrService } from './ocr.service';
     AboutPage,
     ContactPage,
     SamplesPage,
+    HomePage,
+    TabsPage,
     ScanCardPage,
     OfflineStoragePage,
     ModalCreateTodoPage,
     ModalEditTodoPage,
-    HomePage,
-    TabsPage
+    ActionSheetPage,
+    AppAvailabilityPage
   ],
   imports: [
     HttpModule,
@@ -34,12 +40,14 @@ import { OcrService } from './ocr.service';
     AboutPage,
     ContactPage,
     SamplesPage,
+    HomePage,
+    TabsPage,
     ScanCardPage,
     OfflineStoragePage,
     ModalCreateTodoPage,
     ModalEditTodoPage,
-    HomePage,
-    TabsPage
+    ActionSheetPage,
+    AppAvailabilityPage
   ],
   providers: [OcrService]
 })

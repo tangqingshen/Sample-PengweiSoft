@@ -41,4 +41,6 @@
     <plugin name="cordova-plugin-file" spec="~4.3.0" />
     <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0" />
     <plugin name="cordova-sqlite-storage" spec="~2.0.0" />
+    <plugin name="cordova-plugin-actionsheet" spec="~2.3.3" />
+    <plugin name="cordova-plugin-appavailability" spec="~0.4.2" />
 </widget>

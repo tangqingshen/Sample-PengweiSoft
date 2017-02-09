@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ScanCardPage } from '../sample-scancard/sample-scancard';
 import { OfflineStoragePage } from '../sample-offlinestorage/sample-offlinestorage';
+import {ActionSheetPage} from '../sample-action-sheet/sample-action-sheet';
+import {AppAvailabilityPage} from '../sample-app-availability/sample-app-availability';
 
 /*
   Generated class for the Samples page.
@@ -26,6 +28,10 @@ export class SamplesPage {
       this.navCtrl.push(ScanCardPage);
     } else if (item == "offlineStorage") {
       this.navCtrl.push(OfflineStoragePage);
+    }else if (item == "actionsheet") {
+      this.navCtrl.push(ActionSheetPage);
+    }else if (item == "appavailability") {
+      this.navCtrl.push(AppAvailabilityPage);
     }
   }
 
