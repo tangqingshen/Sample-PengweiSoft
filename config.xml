@@ -2,7 +2,7 @@
 <widget id="com.szmstc.pengweisoft" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>鹏微软件</name>
     <description>鹏微 Ionic 2 示例项目</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">SZMSTC</author>
+    <author email="xyp@szmstc.com" href="http://www.szmstc.com/">SZMSTC</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -43,4 +43,5 @@
     <plugin name="cordova-sqlite-storage" spec="~2.0.0" />
     <plugin name="cordova-plugin-actionsheet" spec="~2.3.3" />
     <plugin name="cordova-plugin-appavailability" spec="~0.4.2" />
+    <plugin name="cordova-plugin-app-version" spec="~0.1.9" />
 </widget>
