@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ActionSheetPage } from '../pages/sample-action-sheet/sample-action-sheet';
 import { AppAvailabilityPage } from '../pages/sample-app-availability/sample-app-availability';
 import { BadgePage } from '../pages/sample-badge/sample-badge';
+import { BarcodeScannerPage } from '../pages/sample-barcode-scanner/sample-barcode-scanner';
 
 import { OcrService } from './ocr.service';
 
@@ -29,7 +30,8 @@ import { OcrService } from './ocr.service';
     ModalEditTodoPage,
     ActionSheetPage,
     AppAvailabilityPage,
-    BadgePage
+    BadgePage,
+    BarcodeScannerPage
   ],
   imports: [
     HttpModule,
@@ -49,7 +51,8 @@ import { OcrService } from './ocr.service';
     ModalEditTodoPage,
     ActionSheetPage,
     AppAvailabilityPage,
-    BadgePage
+    BadgePage,
+    BarcodeScannerPage
   ],
   providers: [OcrService, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
