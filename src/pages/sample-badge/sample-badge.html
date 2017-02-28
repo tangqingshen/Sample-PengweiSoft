@@ -1,0 +1,30 @@
+<!--
+  Generated template for the Badge page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Badge</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Badge 数</ion-label>
+      <ion-input type="number" [(ngModel)]="badge"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding-horizontal>
+    <button ion-button block (click)="setBadge()">Set Badge</button>
+    <button ion-button block color="secondary" (click)="clearBadge()">Clear Badge</button>
+    <div>
+      Note: 设置 Badge 后请退出 App 查看
+    </div>
+  </div>
+</ion-content>

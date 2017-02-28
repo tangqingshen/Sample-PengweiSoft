@@ -4,6 +4,7 @@ import { ScanCardPage } from '../sample-scancard/sample-scancard';
 import { OfflineStoragePage } from '../sample-offlinestorage/sample-offlinestorage';
 import {ActionSheetPage} from '../sample-action-sheet/sample-action-sheet';
 import {AppAvailabilityPage} from '../sample-app-availability/sample-app-availability';
+import {BadgePage} from '../sample-badge/sample-badge';
 
 /*
   Generated class for the Samples page.
@@ -32,6 +33,8 @@ export class SamplesPage {
       this.navCtrl.push(ActionSheetPage);
     }else if (item == "appavailability") {
       this.navCtrl.push(AppAvailabilityPage);
+    }else if (item == "badge") {
+      this.navCtrl.push(BadgePage);
     }
   }
 

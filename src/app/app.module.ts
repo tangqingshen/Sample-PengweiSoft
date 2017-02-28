@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
@@ -9,9 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { ScanCardPage } from '../pages/sample-scancard/sample-scancard';
 import { OfflineStoragePage, ModalCreateTodoPage, ModalEditTodoPage } from '../pages/sample-offlinestorage/sample-offlinestorage';
 import { TabsPage } from '../pages/tabs/tabs';
-import {ActionSheetPage} from '../pages/sample-action-sheet/sample-action-sheet';
-import {AppAvailabilityPage} from '../pages/sample-app-availability/sample-app-availability';
-
+import { ActionSheetPage } from '../pages/sample-action-sheet/sample-action-sheet';
+import { AppAvailabilityPage } from '../pages/sample-app-availability/sample-app-availability';
+import { BadgePage } from '../pages/sample-badge/sample-badge';
 
 import { OcrService } from './ocr.service';
 
@@ -28,7 +28,8 @@ import { OcrService } from './ocr.service';
     ModalCreateTodoPage,
     ModalEditTodoPage,
     ActionSheetPage,
-    AppAvailabilityPage
+    AppAvailabilityPage,
+    BadgePage
   ],
   imports: [
     HttpModule,
@@ -47,8 +48,9 @@ import { OcrService } from './ocr.service';
     ModalCreateTodoPage,
     ModalEditTodoPage,
     ActionSheetPage,
-    AppAvailabilityPage
+    AppAvailabilityPage,
+    BadgePage
   ],
-  providers: [OcrService]
+  providers: [OcrService, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
-export class AppModule {}
+export class AppModule { }
