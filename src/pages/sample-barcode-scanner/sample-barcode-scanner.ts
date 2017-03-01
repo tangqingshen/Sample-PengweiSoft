@@ -23,7 +23,10 @@ export class BarcodeScannerPage {
   }
 
   scan() {
-    BarcodeScanner.scan().then((barcodeData) => {
+    BarcodeScanner.scan({
+      showFlipCameraButton: true,
+      showTorchButton: true
+    }).then((barcodeData) => {
       // Success! Barcode data is here
       this.result = JSON.stringify(barcodeData);
     }, (err) => {

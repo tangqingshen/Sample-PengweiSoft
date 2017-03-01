@@ -6,12 +6,13 @@ import {
   NavController,
   ToastController,
   ModalController,
-  ViewController,
-  NavParams,
   ItemSliding
 } from 'ionic-angular';
 
-declare var PouchDB;
+import { ModalCreateTodoPage } from './modal-createtodo';
+import { ModalEditTodoPage } from './modal-edittodo';
+
+import * as PouchDB  from 'pouchdb';
 
 /*
   Generated class for the SampleOfflinestorage page.
@@ -138,74 +139,3 @@ export class OfflineStoragePage {
     modal.present();
   }
 }
-
-@Component({
-  templateUrl: 'modal-createtodo.html'
-})
-export class ModalCreateTodoPage {
-  constructor(public viewCtrl: ViewController) { }
-
-  public text;
-  private db;
-
-  ionViewDidLoad() {
-    this.db = new PouchDB('pengwei_todo');
-  }
-
-  saveTodo() {
-    var that = this;
-    var todo = {
-      _id: new Date().toISOString(),
-      title: that.text,
-      completed: false
-    };
-    that.db.put(todo, function (err, result) {
-      that.viewCtrl.dismiss();
-    });
-  }
-
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
-}
-
-@Component({
-  templateUrl: 'modal-edittodo.html'
-})
-export class ModalEditTodoPage {
-  constructor(public viewCtrl: ViewController, private navParams: NavParams) { }
-
-  private _todo;
-  public todo: any = {};
-  private db;
-
-  ionViewDidLoad() {
-    var that = this;
-    let id = this.navParams.get('id');
-
-    that.db = new PouchDB('pengwei_todo');
-    that.db.get(id).then((todo) => {
-      that._todo = todo;
-      that.todo = {
-        id: todo._id,
-        title: todo.title,
-        completed: todo.completed
-      };
-    })
-  }
-
-  saveTodo() {
-    var that = this;
-    that._todo.title = that.todo.title;
-    that._todo.completed = that.todo.completed;
-    that.db.put(that._todo, function (err, result) {
-      that.viewCtrl.dismiss();
-    });
-  }
-
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
-
-}
-
