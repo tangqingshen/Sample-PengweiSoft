@@ -1,0 +1,11 @@
+{
+  "ios": {
+    "debug": {
+      "developmentTeam": "SZMSTC"
+    },
+    "release": {
+      "developmentTeam": "SZMSTC",
+      "codeSignIdentity": "iPhone Developer"
+    }
+  }
+}

@@ -29,6 +29,9 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <platform name="ios">
+        <hook type="before_compile" src="hooks/xcode8.js" />
+    </platform>
+    <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />
