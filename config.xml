@@ -29,7 +29,7 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <platform name="ios">
-        <hook type="before_compile" src="hooks/xcode8.js" />
+        <hook src="hooks/xcode8.js" type="before_compile" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -96,5 +96,7 @@
     <plugin name="cordova-sqlite-storage" spec="~2.0.0" />
     <plugin name="cordova-plugin-actionsheet" spec="~2.3.3" />
     <plugin name="cordova-plugin-appavailability" spec="~0.4.2" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.5" />
+    <plugin name="cordova-plugin-badge" spec="~0.7.4" />
     <plugin name="cordova-plugin-app-version" spec="~0.1.9" />
 </widget>

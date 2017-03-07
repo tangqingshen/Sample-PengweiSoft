@@ -1,11 +1,12 @@
 {
   "ios": {
     "debug": {
-      "developmentTeam": "SZMSTC"
+      "developmentTeam": "GRYZ4R6WTZ"
     },
     "release": {
-      "developmentTeam": "SZMSTC",
-      "codeSignIdentity": "iPhone Developer"
+      "developmentTeam": "GRYZ4R6WTZ",
+      "codeSignIdentity": "iPhone Developer",
+      "packageType": "in-house"
     }
   }
 }
