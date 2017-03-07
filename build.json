@@ -1,11 +1,15 @@
 {
   "ios": {
     "debug": {
-      "developmentTeam": "GRYZ4R6WTZ"
+      "developmentTeam": "GRYZ4R6WTZ",
+      "codeSignIdentity": "iPhone Developer",
+      "provisioningProfile": "./sign-ios/pengweisoft_provisioning_profile",
+      "packageType": "development"
     },
     "release": {
       "developmentTeam": "GRYZ4R6WTZ",
       "codeSignIdentity": "iPhone Developer",
+      "provisioningProfile": "./sign-ios/pengweisoft_provisioning_profile",
       "packageType": "in-house"
     }
   }
