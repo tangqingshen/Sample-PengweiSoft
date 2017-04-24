@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { SignaturePadModule } from 'angular2-signaturepad';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,6 +16,7 @@ import { ActionSheetPage } from '../pages/sample-action-sheet/sample-action-shee
 import { AppAvailabilityPage } from '../pages/sample-app-availability/sample-app-availability';
 import { BadgePage } from '../pages/sample-badge/sample-badge';
 import { BarcodeScannerPage } from '../pages/sample-barcode-scanner/sample-barcode-scanner';
+import { SignaturepadPage } from '../pages/sample-signaturepad/sample-signaturepad';
 
 import { OcrService } from './ocr.service';
 
@@ -34,10 +36,12 @@ import { OcrService } from './ocr.service';
     ActionSheetPage,
     AppAvailabilityPage,
     BadgePage,
-    BarcodeScannerPage
+    BarcodeScannerPage,
+    SignaturepadPage
   ],
   imports: [
     HttpModule,
+    SignaturePadModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -55,7 +59,8 @@ import { OcrService } from './ocr.service';
     ActionSheetPage,
     AppAvailabilityPage,
     BadgePage,
-    BarcodeScannerPage
+    BarcodeScannerPage,
+    SignaturepadPage
   ],
    providers: [OcrService,{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

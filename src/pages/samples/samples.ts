@@ -6,6 +6,7 @@ import { ActionSheetPage } from '../sample-action-sheet/sample-action-sheet';
 import { AppAvailabilityPage } from '../sample-app-availability/sample-app-availability';
 import { BadgePage } from '../sample-badge/sample-badge';
 import { BarcodeScannerPage } from '../sample-barcode-scanner/sample-barcode-scanner';
+import { SignaturepadPage } from '../sample-signaturepad/sample-signaturepad';
 
 /*
   Generated class for the Samples page.
@@ -38,6 +39,8 @@ export class SamplesPage {
       this.navCtrl.push(BadgePage);
     } else if (item == "barcodescanner") {
       this.navCtrl.push(BarcodeScannerPage);
+    } else if (item == "signaturepad") {
+      this.navCtrl.push(SignaturepadPage);
     }
   }
 
