@@ -30,8 +30,6 @@ export class SignaturepadPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
-
-    console.log(this.contentEl.nativeElement.offsetWidth);
     // this.signaturePad is now available
     this.signaturePad.set('canvasWidth', this.contentEl.nativeElement.offsetWidth); // set szimek/signature_pad options at runtime
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
