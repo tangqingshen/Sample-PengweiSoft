@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { Badge } from 'ionic-native';
 
 /*
@@ -8,11 +8,12 @@ import { Badge } from 'ionic-native';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-badge',
   templateUrl: 'sample-badge.html'
 })
-export class BadgePage {
+export class SampleBadge {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

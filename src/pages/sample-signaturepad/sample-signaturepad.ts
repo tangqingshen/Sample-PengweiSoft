@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
@@ -9,19 +9,20 @@ import { SignaturePad } from 'angular2-signaturepad/signature-pad';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-signaturepad',
   templateUrl: 'sample-signaturepad.html'
 })
-export class SignaturepadPage {
+export class SampleSignaturepad {
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
   @ViewChild('contentEl') contentEl: ElementRef;
 
   imageData: String;
-
   isEmpty = true;
 
+  // tslint:disable-next-line:no-unused-variable
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 1,
     'canvasHeight': 200

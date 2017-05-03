@@ -6,11 +6,9 @@ import {
   NavController,
   ToastController,
   ModalController,
-  ItemSliding
-} from 'ionic-angular';
-
-import { ModalCreateTodoPage } from './modal-createtodo';
-import { ModalEditTodoPage } from './modal-edittodo';
+  ItemSliding,
+  IonicPage
+} from 'ionic-angular'; 
 
 import * as PouchDB  from 'pouchdb';
 
@@ -20,11 +18,12 @@ import * as PouchDB  from 'pouchdb';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-offlinestorage',
   templateUrl: 'sample-offlinestorage.html'
 })
-export class OfflineStoragePage {
+export class SampleOfflineStorage {
 
   private remoteDB = "http://dbreader:Passw0rd@localhost:5984/pengwei_todo";
   public isOnline = false;
@@ -98,7 +97,7 @@ export class OfflineStoragePage {
   }
 
   editTodo(slidingItem: ItemSliding, id) {
-    let modal = this.modalCtrl.create(ModalEditTodoPage, { id: id });
+    let modal = this.modalCtrl.create("ModalEditTodo", { id: id });
     modal.present();
     slidingItem.close();
   }
@@ -135,7 +134,7 @@ export class OfflineStoragePage {
   }
 
   createTodo() {
-    let modal = this.modalCtrl.create(ModalCreateTodoPage);
+    let modal = this.modalCtrl.create("ModalCreateTodo");
     modal.present();
   }
 }

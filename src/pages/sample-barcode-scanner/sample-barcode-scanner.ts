@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { BarcodeScanner } from 'ionic-native';
 
 /*
@@ -8,19 +8,16 @@ import { BarcodeScanner } from 'ionic-native';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-barcode-scanner',
   templateUrl: 'sample-barcode-scanner.html'
 })
-export class BarcodeScannerPage {
+export class SampleBarcodeScanner {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  result: string;
-
-  ionViewDidLoad() {
-
-  }
+  result: string; 
 
   scan() {
     BarcodeScanner.scan({
