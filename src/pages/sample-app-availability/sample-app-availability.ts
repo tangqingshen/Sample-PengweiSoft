@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { NavController, Platform, IonicPage } from 'ionic-angular';
 import { AppAvailability } from 'ionic-native';
 
 /*
@@ -8,11 +8,12 @@ import { AppAvailability } from 'ionic-native';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-app-availability',
   templateUrl: 'sample-app-availability.html'
 })
-export class AppAvailabilityPage {
+export class SampleAppAvailability {
 
   constructor(public navCtrl: NavController, public platform: Platform) { }
 

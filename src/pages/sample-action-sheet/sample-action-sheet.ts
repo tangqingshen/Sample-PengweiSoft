@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController, Platform } from 'ionic-angular';
+import { NavController, ActionSheetController, Platform, IonicPage } from 'ionic-angular';
 import { ActionSheet } from 'ionic-native';
 
 /*
@@ -8,11 +8,12 @@ import { ActionSheet } from 'ionic-native';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-action-sheet',
   templateUrl: 'sample-action-sheet.html'
 })
-export class ActionSheetPage {
+export class SampleActionSheet {
 
   constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public platform: Platform) { }
 

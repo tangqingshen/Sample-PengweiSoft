@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Camera } from 'ionic-native';
-import { File } from 'ionic-native';
+import { NavController, IonicPage } from 'ionic-angular';
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 import { OcrService } from '../../app/ocr.service';
 
 /*
@@ -10,36 +10,38 @@ import { OcrService } from '../../app/ocr.service';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+@IonicPage()
 @Component({
   selector: 'page-sample-scancard',
-  templateUrl: 'sample-scancard.html'
+  templateUrl: 'sample-scancard.html',
+  providers: [File, Camera]
 })
-export class ScanCardPage {
+export class SampleScanCard {
 
   public filepath;
   public entry;
-  public cardinfo; 
+  public cardinfo;
   public error;
 
-  constructor(public navCtrl: NavController, private ocrService: OcrService) { }
+  constructor(public navCtrl: NavController, private ocrService: OcrService, private file: File, private camera: Camera) { }
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() { }
 
   getPicture() {
     var options = {
-            destinationType: Camera.DestinationType.FILE_URI
-        };
+      destinationType: this.camera.DestinationType.FILE_URI
+    };
     var that = this;
-    Camera.getPicture(options).then((imageData) => {
+    this.camera.getPicture(options).then((imageData) => {
       if (imageData.startsWith('file:///')) {
         //image url
         that.filepath = imageData;
-        File.resolveLocalFilesystemUrl(imageData).then((entry) => {
+        this.file.resolveLocalFilesystemUrl(imageData).then((entry) => {
           that.entry = JSON.stringify(entry);
           entry.getMetadata((metaData) => {
             that.ocrService.getInfo({ filepath: imageData, filesize: metaData.size }).then((cardinfo) => {
               that.cardinfo = JSON.stringify(cardinfo);
-            }, (err)=>{
+            }, (err) => {
               that.error = JSON.stringify(err);
             });
           })

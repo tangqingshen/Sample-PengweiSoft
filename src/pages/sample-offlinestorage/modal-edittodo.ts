@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { ViewController, NavParams } from 'ionic-angular';
+import { ViewController, NavParams, IonicPage } from 'ionic-angular';
 
 import * as PouchDB  from 'pouchdb';
 
+@IonicPage()
 @Component({
   templateUrl: 'modal-edittodo.html'
 })
-export class ModalEditTodoPage {
+export class ModalEditTodo {
   constructor(public viewCtrl: ViewController, private navParams: NavParams) { }
 
   private _todo;
